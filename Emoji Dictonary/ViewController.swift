@@ -13,8 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var theViewTable: UITableView!
     
     
-    
-    
+    var emojis = ["👀", "😽", "😎", "🤡", "🦄"]
     
     
     
@@ -30,15 +29,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return emojis.count
         
         
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        print(indexPath.row)
+        
         let cell = UITableViewCell()
-        cell.textLabel?.text = "HELLO THERE"
+        cell.textLabel?.text = emojis[indexPath.row]
         return cell
     }
     
